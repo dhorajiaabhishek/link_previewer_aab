@@ -18,7 +18,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  link_previewer_add: ^1.0.0
+  link_previewer_aad: ^1.0.0
 ```
 
 2. Install it
