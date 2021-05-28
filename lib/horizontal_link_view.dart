@@ -1,4 +1,4 @@
-part of link_previewer;
+part of link_previewer_aad;
 
 class HorizontalLinkView extends StatelessWidget {
   HorizontalLinkView({
@@ -17,12 +17,7 @@ class HorizontalLinkView extends StatelessWidget {
     this.titleTextColor,
     this.bodyTextColor,
     this.borderRadius,
-  })  : assert(imageUri != null),
-        assert(title != null),
-        assert(url != null),
-        assert(description != null),
-        assert(onTap != null),
-        super(key: key);
+  }) : super(key: key);
 
   final String url;
   final String title;

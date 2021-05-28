@@ -1,5 +1,9 @@
 /*import 'package:collection/collection.dart' show IterableExtension;*/
-part of link_previewer;
+
+import 'package:html/dom.dart';
+import 'package:html/dom.dart' hide Text;
+import 'package:html/parser.dart' as parser;
+import 'package:http/http.dart' as http;
 
 class WebPageParser {
   static Future<Map> getData(String url) async {
@@ -105,7 +109,7 @@ class WebPageParser {
     return document.head!.querySelectorAll("[property*='og:']");
   }
 
-  static String? _addWWWPrefixIfNotExists(String? uri) {
+  static String? addWWWPrefixIfNotExists(String? uri) {
     if (uri == null || uri == "") {
       return uri;
     }

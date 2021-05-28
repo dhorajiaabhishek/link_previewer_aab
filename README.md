@@ -2,7 +2,7 @@
 
 A new Flutter package. Build container with image, title, description from web-site (link) will be provided.
 
-[Original Package](https://pub.dev/packages/link_previewer)
+[Original Package](https://pub.dev/packages/link_previewer_aad)
 
 ## Warning - This package might be removed if the changes gets approved on the original package.
 ## Getting Started
@@ -37,7 +37,7 @@ Alternatively, your editor might support flutter pub get. Check the docs for you
 Now in your Dart code, you can use:
 
 ```dart
-import 'package:link_previewer/link_previewer.dart';
+import 'package:link_previewer_aad/link_previewer_aad.dart';
 ```
 
 ## Usage

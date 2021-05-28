@@ -1,4 +1,4 @@
-part of link_previewer;
+part of link_previewer_aad;
 
 class VerticalLinkPreview extends StatelessWidget {
   VerticalLinkPreview({
@@ -75,8 +75,8 @@ class VerticalLinkPreview extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: ClipRRect(
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(borderRadius!)),
+                  borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(borderRadius!)),
                   child: imageUri == ""
                       ? Container(
                           color: Color.fromRGBO(235, 235, 235, 1.0),

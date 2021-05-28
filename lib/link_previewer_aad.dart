@@ -1,22 +1,16 @@
-library link_previewer;
+library link_previewer_aad;
 
-import 'package:url_launcher/url_launcher.dart';
-import 'package:http/http.dart' as http;
-import 'package:html/parser.dart' as parser;
-import 'package:html/dom.dart' hide Text;
 import 'package:flutter/material.dart' hide Element;
-import 'dart:async';
+import 'package:url_launcher/url_launcher.dart';
 
-part 'parser/web_page_parser.dart';
+import 'parser/web_page_parser.dart';
 
-part 'package:link_previewer/horizontal_link_view.dart';
+part 'package:link_previewer_aad/content_direction.dart';
+part 'package:link_previewer_aad/horizontal_link_view.dart';
+part 'package:link_previewer_aad/vertical_link_preview.dart';
 
-part 'package:link_previewer/vertical_link_preview.dart';
-
-part 'package:link_previewer/content_direction.dart';
-
-class LinkPreviewer extends StatefulWidget {
-  LinkPreviewer({
+class LinkPreviewerAad extends StatefulWidget {
+  LinkPreviewerAad({
     Key? key,
     required this.link,
     this.titleFontSize,
@@ -33,8 +27,7 @@ class LinkPreviewer extends StatefulWidget {
     this.direction = ContentDirection.horizontal,
     this.bodyTextOverflow,
     this.bodyMaxLines,
-  })  : assert(link != null),
-        super(key: key);
+  }) : super(key: key);
 
   final String link;
   final double? titleFontSize;
@@ -56,7 +49,7 @@ class LinkPreviewer extends StatefulWidget {
   _LinkPreviewer createState() => _LinkPreviewer();
 }
 
-class _LinkPreviewer extends State<LinkPreviewer> {
+class _LinkPreviewer extends State<LinkPreviewerAad> {
   Map? _metaData;
   double? _height;
   String? _link;
@@ -101,7 +94,7 @@ class _LinkPreviewer extends State<LinkPreviewer> {
   }
 
   String? _getUriWithPrefix(uri) {
-    return WebPageParser._addWWWPrefixIfNotExists(uri);
+    return WebPageParser.addWWWPrefixIfNotExists(uri);
   }
 
   void _getMetaData(link) async {
